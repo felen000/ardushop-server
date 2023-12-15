@@ -36,7 +36,11 @@ app.use(errorMiddleware)
 
 async function startApp() {
   try {
-    await mongoose.connect(DB_URL);
+    await mongoose.connect(DB_URL,  {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true
+  });
     app.listen(PORT, () => {
       console.log(`http://localhost:${PORT}`);
 
