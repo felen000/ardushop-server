@@ -38,7 +38,6 @@ async function startApp() {
   try {
     await mongoose.connect(DB_URL,  {
     useNewUrlParser: true,
-    useFindAndModify: false,
     useUnifiedTopology: true
   });
     app.listen(PORT, () => {
